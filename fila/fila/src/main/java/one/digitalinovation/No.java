@@ -1,10 +1,10 @@
 package one.digitalinovation;
 
-public class No {
-    private Object object;
-    private No referenciaNo;
+public class No<T> {
+    private T object;
+    private No<T> referenciaNo;
 
-    public No(Object object) {
+    public No(T object) {
         this.referenciaNo = null;
         this.object = object;
     }
@@ -17,7 +17,7 @@ public class No {
         return object;
     }
 
-    public void setObject(Object object) {
+    public void setObject(T object) {
         this.object = object;
     }
 

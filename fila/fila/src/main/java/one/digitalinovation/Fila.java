@@ -1,7 +1,7 @@
 package one.digitalinovation;
 
-public class Fila {
-    private No referenciaEntradaFila;
+public class Fila<T> {
+    private No<T> referenciaEntradaFila;
 
 //    construtor
     public Fila() {
@@ -9,14 +9,14 @@ public class Fila {
     }
 
 //    Adiciona um elemento ao final da fila
-    public void enqueue(Object object) {
+    public void enqueue(T object) {
         No novoNo = new No(object);
         novoNo.setReferenciaNo(referenciaEntradaFila);
         referenciaEntradaFila = novoNo;
     }
 
 //    retorna o primeiro elemento da fila sem removê-lo
-    public Object first() {
+    public T first() {
         if (!this.isEmpty()) {
             No primeiroNo = referenciaEntradaFila;
             while (true) {
@@ -26,13 +26,13 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNo.getObject();
+            return (T) primeiroNo.getObject();
         }
         return null;
     }
 
 //    remove e retorna o primeiro elemento da fila
-    public Object dequeue() {
+    public T dequeue() {
         if (!this.isEmpty()) {
             No primeiroNo = referenciaEntradaFila;
             No noAuxiliar = referenciaEntradaFila;
@@ -46,7 +46,7 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNo.getObject();
+            return (T) primeiroNo.getObject();
         }
         return null;
     }
