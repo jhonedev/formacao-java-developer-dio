@@ -8,13 +8,13 @@ public class Fila {
         this.referenciaEntradaFila = referenciaEntradaFila;
     }
 
-//    metodo enfileirar
+//    Adiciona um elemento ao final da fila
     public void enqueue(No novoNo) {
         novoNo.setReferenciaNo(referenciaEntradaFila);
         referenciaEntradaFila = novoNo;
     }
 
-//    retorna o primeiro nó da fila
+//    retorna o primeiro elemento da fila sem removê-lo
     public No first() {
         if (!this.isEmpty()) {
             No primeiroNo = referenciaEntradaFila;
@@ -25,10 +25,12 @@ public class Fila {
                     break;
                 }
             }
+            return primeiroNo;
         }
         return null;
     }
 
+//    remove e retorna o primeiro elemento da fila
     public No dequeue() {
         if (!this.isEmpty()) {
             No primeiroNo = referenciaEntradaFila;
@@ -43,6 +45,7 @@ public class Fila {
                     break;
                 }
             }
+            return primeiroNo;
         }
         return null;
     }
