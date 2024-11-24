@@ -9,13 +9,14 @@ public class Fila {
     }
 
 //    Adiciona um elemento ao final da fila
-    public void enqueue(No novoNo) {
+    public void enqueue(Object object) {
+        No novoNo = new No(object);
         novoNo.setReferenciaNo(referenciaEntradaFila);
         referenciaEntradaFila = novoNo;
     }
 
 //    retorna o primeiro elemento da fila sem removê-lo
-    public No first() {
+    public Object first() {
         if (!this.isEmpty()) {
             No primeiroNo = referenciaEntradaFila;
             while (true) {
@@ -25,13 +26,13 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNo;
+            return primeiroNo.getObject();
         }
         return null;
     }
 
 //    remove e retorna o primeiro elemento da fila
-    public No dequeue() {
+    public Object dequeue() {
         if (!this.isEmpty()) {
             No primeiroNo = referenciaEntradaFila;
             No noAuxiliar = referenciaEntradaFila;
@@ -45,7 +46,7 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNo;
+            return primeiroNo.getObject();
         }
         return null;
     }
