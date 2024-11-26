@@ -1,5 +1,7 @@
 package one.digitalinovation;
 
+import javax.swing.plaf.PanelUI;
+
 public class ListaEncadeada<T> {
     No<T> referenciaEntrada;
 
@@ -35,6 +37,18 @@ public class ListaEncadeada<T> {
             noAuxiliar = noAuxiliar.getProximoNo();
         }
         return noRetorno;
+    }
+
+//    retorna o conteudo que foi removido
+    public T remove(int index) {
+        No<T> noPivor = this.referenciaEntrada;
+        if (index == 0) {
+            referenciaEntrada = noPivor.getProximoNo();
+            return noPivor.getConteudo();
+        }
+        No<T> noAnterior = getNo(index - 1);
+        noAnterior.setProximoNo(noPivor.getProximoNo());
+        return noPivor.getConteudo();
     }
 
 //    tamanho da lista
