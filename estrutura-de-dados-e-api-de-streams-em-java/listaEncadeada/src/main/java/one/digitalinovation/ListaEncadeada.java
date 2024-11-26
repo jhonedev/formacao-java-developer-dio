@@ -32,7 +32,7 @@ public class ListaEncadeada<T> {
         No<T> noAuxiliar = referenciaEntrada;
         No<T> noRetorno = null;
 
-        for (int i = 0; i < this.size()-1; i++) {
+        for (int i = 0; i <= index; i++) {
             noRetorno = noAuxiliar;
             noAuxiliar = noAuxiliar.getProximoNo();
         }
@@ -41,7 +41,7 @@ public class ListaEncadeada<T> {
 
 //    retorna o conteudo que foi removido
     public T remove(int index) {
-        No<T> noPivor = this.referenciaEntrada;
+        No<T> noPivor = this.getNo(index);
         if (index == 0) {
             referenciaEntrada = noPivor.getProximoNo();
             return noPivor.getConteudo();
@@ -60,7 +60,7 @@ public class ListaEncadeada<T> {
             if (referenciaAuxiliar != null) {
                 tamanhoLista ++;
                 if (referenciaAuxiliar.getProximoNo() != null) {
-                    referenciaAuxiliar = referenciaEntrada.getProximoNo();
+                    referenciaAuxiliar = referenciaAuxiliar.getProximoNo();
                 }else {
                     break;
                 }
