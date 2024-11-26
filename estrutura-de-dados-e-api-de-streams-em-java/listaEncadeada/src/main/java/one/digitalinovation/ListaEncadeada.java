@@ -21,6 +21,10 @@ public class ListaEncadeada<T> {
         noAuxiliar.setProximoNo(novoNo);
     }
 
+    public T get(int index) {
+        return getNo(index).getConteudo();
+    }
+
     private No<T> getNo(int index) {
         validaIndice(index);
         No<T> noAuxiliar = referenciaEntrada;
@@ -56,7 +60,7 @@ public class ListaEncadeada<T> {
     private void validaIndice(int index) {
         if (index >= size()) {
             int ultimoIndice = size() - 1;
-            throw new IndexOutOfBoundsException("Não existe conteúdo no indice " + index + " desta lista. Esta lista só vai até o índece " + ultimoIndice + ".")
+            throw new IndexOutOfBoundsException("Não existe conteúdo no indice " + index + " desta lista. Esta lista só vai até o índece " + ultimoIndice + ".");
         }
     }
 
