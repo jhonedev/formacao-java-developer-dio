@@ -89,10 +89,11 @@ public class ArvoreBinaria<T extends Comparable<T>> {
                 }else if (atual.getNoEsq() == null){
                     this.raiz = atual.getNoDir();
                 }else {
-                    for (temporario = atual, filho = atual.getNoEsq();
-                         filho.getNoDir() != null;
-                         temporario = filho, filho = filho.getNoEsq()
-                    ) {
+                    for (
+                            temporario = atual, filho = atual.getNoEsq();
+                            filho.getNoDir() != null;
+                            temporario = filho, filho = filho.getNoEsq()
+                    ){
                         if (filho != atual.getNoEsq()) {
                             temporario.setNoDir(filho.getNoEsq());
                             filho.setNoEsq(raiz.getNoEsq());
@@ -114,9 +115,23 @@ public class ArvoreBinaria<T extends Comparable<T>> {
                     pai.setNoDir(atual.getNoDir());
                 }
             }else {
-                
+                for (
+                        temporario = atual, filho = atual.getNoEsq();
+                        filho.getNoDir() != null;
+                        temporario = filho, filho = filho.getNoDir()
+                ){
+                    if (filho != atual.getNoEsq()){
+                        temporario.setNoDir(filho.getNoEsq());
+                        filho.setNoEsq(atual.getNoEsq());
+                    }
+                    filho.setNoDir(atual.getNoDir());
+                    if (pai.getNoEsq() == atual){
+                        pai.setNoEsq(filho);
+                    }else {
+                        pai.setNoDir(filho);
+                    }
+                }
             }
-
         }catch (NullPointerException erro){
             System.out.println("Conteudo nao encontrado. Bloco catch");
         }
