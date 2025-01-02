@@ -1,25 +1,32 @@
 package one.digitalinovation;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Stack;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        List<Carro> listaCarros = new ArrayList<>();
+        Stack<Carro> stackCarros = new Stack<>();
 
-        listaCarros.add(new Carro("Ford"));
-        listaCarros.add(new Carro("Chevrolet"));
-        listaCarros.add(new Carro("Volkswagem"));
+        stackCarros.push(new Carro("Ford"));
+        stackCarros.push(new Carro("Chevrolet"));
+        stackCarros.push(new Carro("Fiat"));
 
-        System.out.println(new Carro("Ford").hashCode());
-        System.out.println(new Carro("Ford1").hashCode());
+        System.out.println(stackCarros);
 
-        Carro carro1 = new Carro("Ford");
-        Carro carro2 = new Carro("Chevrolet");
+        System.out.println(stackCarros.pop()); // retirando o ultimo item adicionado na lista
+        System.out.println(stackCarros);
 
-        System.out.println(carro1.equals(carro2));
+
+        System.out.println(stackCarros.peek()); // verifica o ultimo item adicionado na lista mas nao o retira.
+        System.out.println(stackCarros);
+
+        System.out.println(stackCarros.empty()); // verifica se a lista está vazia
+        System.out.println(stackCarros);
+
+
+
 
     }
 
