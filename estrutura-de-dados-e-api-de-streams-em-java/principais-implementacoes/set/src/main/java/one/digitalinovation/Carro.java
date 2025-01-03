@@ -2,7 +2,7 @@ package one.digitalinovation;
 
 import java.util.Objects;
 
-public class Carro {
+public class Carro implements Comparable<Carro> {
     String marca;
 
     public Carro(String marca) {
@@ -34,5 +34,20 @@ public class Carro {
         return "Carro{" +
                 "marca='" + marca + '\'' +
                 '}';
+    }
+
+//    @Override
+//    public int compareTo(Carro o) { // comparando carro pelo tamanho da string
+//        if (this.marca.length() < o.marca.length()){
+//            return -1;
+//        } else if (this.marca.length() > o.marca.length()) {
+//            return 1;
+//        }
+//        return 0;
+//    }
+
+    @Override
+    public int compareTo(Carro o) { // comparando carro pela ordem alfabética
+        return this.getMarca().compareTo(o.getMarca());
     }
 }
