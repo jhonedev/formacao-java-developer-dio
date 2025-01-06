@@ -26,8 +26,22 @@ public class ExemploOrdenacaoList {
 
         System.out.println("Ordem natural (Nome)");
         Collections.sort(gatos);
+        System.out.println(gatos);
 
         System.out.println("Ordem Idade");
+        Collections.sort(gatos, new ComparatorIdade());
+        //gatos.sort(new ComparatorIdade());
+        System.out.println(gatos);
+
+        System.out.println("Ordem por cor");
+        //Collections.sort(gatos, new ComparatorCor());
+        gatos.sort(new ComparatorCor());
+        System.out.println(gatos);
+
+        System.out.println("Ordem: Nome, cor, idade");
+        Collections.sort(gatos, new ComparatorNomeCorIdade());
+        gatos.sort(new ComparatorNomeCorIdade());
+        System.out.println(gatos);
 
 
     }
