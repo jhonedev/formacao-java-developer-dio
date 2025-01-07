@@ -3,20 +3,20 @@ package br.com.dio.collection.list;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExerciciosList {
+public class ExercicioListTemperatura {
     public static void main(String[] args) {
 
-        List<TemperaturaAnual> temperatura = new ArrayList<>();
+        List<Temperatura> temperatura = new ArrayList<>();
 
-        temperatura.add(new TemperaturaAnual(25d, "Janeiro"));
-        temperatura.add(new TemperaturaAnual(25.2, "Fervereiro"));
-        temperatura.add(new TemperaturaAnual(33d, "Março"));
-        temperatura.add(new TemperaturaAnual(26.4, "Abril"));
-        temperatura.add(new TemperaturaAnual(23d, "Maio"));
-        temperatura.add(new TemperaturaAnual(22.4, "Junho"));
+        temperatura.add(new Temperatura(25d, "Janeiro"));
+        temperatura.add(new Temperatura(25.2, "Fervereiro"));
+        temperatura.add(new Temperatura(33d, "Março"));
+        temperatura.add(new Temperatura(26.4, "Abril"));
+        temperatura.add(new Temperatura(23d, "Maio"));
+        temperatura.add(new Temperatura(22.4, "Junho"));
 
         double soma = 0d;
-        for (TemperaturaAnual temperaturaAnual : temperatura) {
+        for (Temperatura temperaturaAnual : temperatura) {
             soma += temperaturaAnual.getTemperatura();
         }
 
@@ -25,7 +25,7 @@ public class ExerciciosList {
 
         System.out.println("As temperaturas acima da médias são:");
         for (int i = 0; i < temperatura.size(); i++) {
-            TemperaturaAnual temp = temperatura.get(i);
+            Temperatura temp = temperatura.get(i);
             if (temp.getTemperatura() > media){
                 System.out.println((i + 1) + " - " + temp.getMes() + " - " + temp.getTemperatura());
             }

@@ -1,10 +1,10 @@
 package br.com.dio.collection.list;
 
-public class TemperaturaAnual {
+public class Temperatura {
     private String mes;
     private double temperatura;
 
-    public TemperaturaAnual(double temperatura, String mes) {
+    public Temperatura(double temperatura, String mes) {
         this.temperatura = temperatura;
         this.mes = mes;
     }
