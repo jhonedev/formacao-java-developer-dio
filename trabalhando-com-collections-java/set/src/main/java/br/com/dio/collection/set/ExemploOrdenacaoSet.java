@@ -55,5 +55,12 @@ public class ExemploOrdenacaoSet {
         for (Serie serie : serieSet4) {
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
         }
+
+        System.out.println("Ordem TempoEpisodio");
+        Set<Serie> serieSet5 = new TreeSet<>(new ComparatorTempoEpisodio());
+        serieSet5.addAll(seriesSet);
+        for (Serie serie : serieSet5) {
+            System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
+        }
     }
 }
