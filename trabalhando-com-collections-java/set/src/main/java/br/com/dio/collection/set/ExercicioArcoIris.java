@@ -35,5 +35,36 @@ public class ExercicioArcoIris {
         for (ArcoIris arcoIris : arcoIrisSet2) {
             System.out.println(arcoIris.getCor());
         }
+
+        System.out.println("Exiba todas as cores que começam com a letra V");
+        Set<String> arcoIrisSet3 = new LinkedHashSet<>();
+        arcoIrisSet3.add("Vermelho");
+        arcoIrisSet3.add("Laranja");
+        arcoIrisSet3.add("Amarelo");
+        arcoIrisSet3.add("Verde");
+        arcoIrisSet3.add("Azul");
+        arcoIrisSet3.add("Anil");
+        arcoIrisSet3.add("Violeta");
+
+        for (String cor : arcoIrisSet3) {
+            if (cor.startsWith("V")){
+                System.out.println(cor);
+            }
+        }
+
+        System.out.println("Remova todas as cores que não começam com a letra v");
+//        arcoIrisSet3.removeIf(cor -> !cor.startsWith("V"));
+//        for (String cor : arcoIrisSet3) {
+//            System.out.println(cor);
+//        }
+
+        Iterator<String> iterator = arcoIrisSet3.iterator();
+        while (iterator.hasNext()){
+            if (!iterator.next().startsWith("V")){
+                iterator.remove();
+            }
+        }
+
+
     }
 }
