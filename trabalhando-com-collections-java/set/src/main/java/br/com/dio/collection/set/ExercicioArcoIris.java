@@ -65,6 +65,13 @@ public class ExercicioArcoIris {
             }
         }
 
+        System.out.println("Limpe o conjunto");
+        arcoIrisSet3.clear();
+
+        System.out.println("Confira se o conjunto está vazio");
+        System.out.println(arcoIrisSet3);
+
+
 
     }
 }
