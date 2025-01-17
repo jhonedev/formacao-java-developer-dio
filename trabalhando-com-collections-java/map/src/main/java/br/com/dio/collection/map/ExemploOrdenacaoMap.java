@@ -58,9 +58,5 @@ public class ExemploOrdenacaoMap {
         for (Map.Entry<String, Livro> livro : livroMap4) {
             System.out.println(livro.getKey() + " - " + livro.getValue().getNome() + " - " + livro.getValue().getNumeroPaginas() + " paginas");
         }
-
-
-
-
     }
 }
