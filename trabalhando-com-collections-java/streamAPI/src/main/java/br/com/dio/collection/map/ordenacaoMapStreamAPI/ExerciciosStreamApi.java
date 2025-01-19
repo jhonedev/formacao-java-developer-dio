@@ -2,9 +2,9 @@ package br.com.dio.collection.map.ordenacaoMapStreamAPI;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
+import java.util.function.*;
 import java.util.stream.Collectors;
+import java.util.ArrayList;
 
 public class ExerciciosStreamApi {
     public static void main(String[] args) {
@@ -23,9 +23,35 @@ public class ExerciciosStreamApi {
                 );
 
         System.out.println("Transforme essa lista em uma lista de numeros inteiros");
-        numerosAleatorios.stream()
+        List<Integer> numerosInteiros = new ArrayList<>(
+                numerosAleatorios.stream()
+                        .map(Integer::parseInt)
+                        .toList());
+        System.out.println(numerosInteiros);
+
+        System.out.println("Pegue os numeros pares e maiores que 2 e coloque em uma lista");
+        List<Integer> ListParesMaioresQueDois = numerosAleatorios.stream()
                 .map(Integer::parseInt)
-                .collect(Collectors.toList())
-                .forEach(integer -> System.out.println(integer));
+                .filter(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer i) {
+                        return i % 2 == 0 && i > 2;
+                    }
+                })
+                .toList();
+        for (Integer numeros : ListParesMaioresQueDois) {
+            System.out.println(numeros);
+        }
+
+        System.out.println("Mostre a media dos numeros");
+        numerosAleatorios.stream()
+                .mapToInt(Integer::parseInt)
+                .average()
+                .ifPresent(System.out::println);
+
+        System.out.println("Remova os valores impares");
+        numerosInteiros.removeIf(integer -> integer % 2 != 0);
+        System.out.println(numerosInteiros);
+
     }
 }
