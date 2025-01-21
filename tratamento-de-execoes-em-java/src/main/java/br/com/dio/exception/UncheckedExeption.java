@@ -28,9 +28,6 @@ public class UncheckedExeption {
                 System.out.println("Chegou no finally");
             }
         }while (continuaLooping);
-
-
         System.out.println("O codigo continua");
-
     }
 }
