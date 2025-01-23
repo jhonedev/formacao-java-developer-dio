@@ -3,7 +3,7 @@ package br.com.dio.exception;
 import javax.swing.*;
 import java.io.*;
 
-public class ExceptionCustomizada {
+public class ExceptionCustomizada1 {
     public static void main(String[] args) {
 
         String nomeArquivo = JOptionPane.showInputDialog("Nome do arquivo a ser exibido");
