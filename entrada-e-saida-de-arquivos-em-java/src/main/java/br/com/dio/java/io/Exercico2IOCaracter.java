@@ -29,12 +29,7 @@ public class Exercico2IOCaracter {
         printWriter.close();
         scanner.close();
         bufferedWriter.close();
-
-
-
-
     }
-
 
     public static void main(String[] args) throws IOException {
         //Abra o teclado para escrever 3 filmes que voce recomendaria e armazene em recomendacoes.txt
